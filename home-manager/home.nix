@@ -50,6 +50,7 @@
   home = {
     username = "shob";
     homeDirectory = "/home/shob";
+
     packages = with pkgs: [
       python3
       gcc
@@ -79,12 +80,17 @@
       protontricks
       pkgs22.quartus-prime-lite # hoo boy
     ];
+
     sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATH = "\${HOME}/.steam/root/compatibility.d";
       NIXPKGS_ALLOW_UNFREE=1;
       EDITOR = "nvim";
       BROWSER = "brave";
       TERMINAL = "terminator";
+    };
+
+    file = {
+      ".config/nvim" = dotfiles/nvim; # neovim lua config
     };
   };
 
